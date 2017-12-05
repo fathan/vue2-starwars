@@ -1,23 +1,35 @@
 <template>
   <div id="app">
-    <Header/>
-    <Sidebar/>
-    <router-view/>
-    <Footer/>
+    <AppHeader/>
+    <br>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col col-2">
+          <AppSidebar/>
+        </div>
+        <div class="col">
+          <div class="card card-default">
+            <div class="card-body">
+              <router-view/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import Header from './components/Header'
-import Sidebar from './components/Sidebar'
-import Footer from './components/Footer'
+import AppHeader from './components/AppHeader'
+import AppSidebar from './components/AppSidebar'
+import AppFooter from './components/AppFooter'
 
 export default {
   name: 'app',
   components: {
-    Header,
-    Sidebar,
-    Footer
+    AppHeader,
+    AppSidebar,
+    AppFooter
   }
 }
 </script>

@@ -1,11 +1,11 @@
 <template>
 	<div>
-		Species
+		Films Detail
 	</div>
 </template>
 
 <script>
 	export default {
-		name: 'Species'
+		name: 'FilmsDetail'
 	}
 </script>

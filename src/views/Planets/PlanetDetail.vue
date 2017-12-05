@@ -1,11 +1,11 @@
 <template>
 	<div>
-		Footer
+		Planet Detail
 	</div>
 </template>
 
 <script>
 	export default {
-		name: 'Footer'
+		name: 'Planets'
 	}
 </script>

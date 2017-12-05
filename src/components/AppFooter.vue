@@ -1,11 +1,11 @@
 <template>
 	<div>
-		Vehicles
+		Footer
 	</div>
 </template>
 
 <script>
 	export default {
-		name: 'Vehicles'
+		name: 'AppFooter'
 	}
 </script>

@@ -1,11 +1,11 @@
 <template>
 	<div>
-		Header
+		Starship Detail
 	</div>
 </template>
 
 <script>
 	export default {
-		name: 'Header'
+		name: 'StarshipDetail'
 	}
 </script>

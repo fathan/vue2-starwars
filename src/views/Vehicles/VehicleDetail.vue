@@ -1,11 +1,11 @@
 <template>
 	<div>
-		Films
+		Vehicle Detail
 	</div>
 </template>
 
 <script>
 	export default {
-		name: 'Films'
+		name: 'VehicleDetail'
 	}
 </script>
