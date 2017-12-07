@@ -31,6 +31,7 @@ import NotFound from '@/views/Random/NotFound'
 Vue.use(Router)
 
 const router = new Router({
+  base: process.env.ROUTER_BASE,
   mode: 'history',
   linkActiveClass: 'active',
   scrollBehavior: () => ({ y: 0 }),
