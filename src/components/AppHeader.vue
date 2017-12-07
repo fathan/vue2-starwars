@@ -39,3 +39,17 @@
 		name: 'AppHeader'
 	}
 </script>
+
+<style scoped>
+	.navbar-light .navbar-brand {
+	  color: #FFFFFF;
+	}
+
+	.navbar-light .navbar-nav .nav-link {
+	  color: rgba(255, 255, 255, 0.7);
+	}
+
+	.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+		color: rgb(255, 255, 255);
+	}
+</style>
