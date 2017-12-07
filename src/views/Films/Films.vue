@@ -11,12 +11,12 @@
 		    </tr>
 		  </thead>
 		  <tbody>
-		    <tr>
-		      <th scope="row">1</th>
-		      <td>-</td>
-		      <td>-</td>
-		      <td>-</td>
-		      <td>-</td>
+		    <tr v-for="(f, index) in films">
+		      <th scope="row">{{ index+1 }}</th>
+		      <td>{{ f.title }}</td>
+		      <td>{{ f.director }}</td>
+		      <td>{{ f.producer }}</td>
+		      <td>{{ f.release_date }}</td>
 		    </tr>
 		  </tbody>
 		</table>
@@ -25,6 +25,14 @@
 
 <script>
 	export default {
-		name: 'Films'
+		name: 'Films',
+		computed: {
+			films () {
+				return this.$store.getters.allFilms
+			}
+		},
+		created () {
+			this.$store.dispatch('getAllFilms')
+		}
 	}
 </script>

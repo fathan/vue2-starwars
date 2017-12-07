@@ -1,22 +1,23 @@
 import axios from 'axios'
 import { ENV } from './config'
+import * as mutationType from '../mutation_types'
 
 const api = axios.create({
   baseURL: ENV.API_URL
 })
+
 const state = {
 	films: []
 }
+
 const getters = {
 	allFilms: state => {
-    return state.films.sort((a, b) => {
-      return a['id'] < b['id']
-    })
+    return state.films
   }
 }
 
 const actions = {
-	getActAllFilms () {
+	getAllFilms ({commit}) {
 		return new Promise((resolve, reject) => {
 			let options = {
         headers: {
@@ -26,8 +27,8 @@ const actions = {
       api.get('films', options)
       .then(
         response => {
-          resolve(response)
-          state.films = response.results
+        	let films = response.data.results
+          commit(mutationType.SHOW_ALL_FILMS, films)
         },
         error => {
           reject(error)
@@ -36,7 +37,12 @@ const actions = {
 		})
 	}
 }
-const mutations = {}
+
+const mutations = {
+  [mutationType.SHOW_ALL_FILMS] (state, films) {
+    state.films = films
+  }
+}
 
 export default {
 	state,

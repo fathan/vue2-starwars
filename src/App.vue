@@ -4,15 +4,17 @@
     <br>
     <div class="container-fluid">
       <div class="row">
-        <div class="col col-2">
-          <AppSidebar/>
-        </div>
         <div class="col">
           <div class="card card-default">
             <div class="card-body">
               <router-view/>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <AppFooter/>
         </div>
       </div>
     </div>
