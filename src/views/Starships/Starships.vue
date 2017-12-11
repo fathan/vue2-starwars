@@ -1,5 +1,11 @@
 <template>
 	<div>
+		Total count starships data is a 
+		<span class="badge badge-pill badge-danger">
+			{{ countStarship }}
+		</span>
+		<br>
+		<br>
 		<table class="table table-bordered table-responsive-xl table-responsive-lg table-responsive-md table-responsive-sm table-striped">
 		  <thead class="thead-dark">
 		    <tr>
