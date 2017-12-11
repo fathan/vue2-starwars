@@ -1,32 +1,32 @@
 <template>
 	<div>
 		<nav class="navbar navbar-expand-lg navbar-light bg-primary">
-		  <a class="navbar-brand" href="#">STARWARS API WITH VUE.JS + VUEX</a>
+		  <a class="navbar-brand" href="#">SWAPI</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-starwars" aria-controls="navbar-starwars" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 		  <div class="collapse navbar-collapse" id="navbar-starwars">
 		    <ul class="navbar-nav ml-auto">
 		      <li class="nav-item">
-		        <router-link class="nav-link" to="/">Home</router-link>
+		        <router-link class="nav-link" to="/">HOME</router-link>
 		      </li>
 		      <li class="nav-item">
-		        <router-link class="nav-link" to="/films">Films</router-link>
+		        <router-link class="nav-link" to="/films">FILMS</router-link>
 		      </li>
 		      <li class="nav-item">
-		        <router-link class="nav-link" to="/people">People</router-link>
+		        <router-link class="nav-link" to="/people">PEOPLE</router-link>
 		      </li>
 		      <li class="nav-item">
-		        <router-link class="nav-link" to="/planets">Planets</router-link>
+		        <router-link class="nav-link" to="/planets">PLANETS</router-link>
 		      </li>
 		      <li class="nav-item">
-		        <router-link class="nav-link" to="/species">Species</router-link>
+		        <router-link class="nav-link" to="/species">SPECIES</router-link>
 		      </li>
 		      <li class="nav-item">
-		        <router-link class="nav-link" to="/starships">Starships</router-link>
+		        <router-link class="nav-link" to="/starships">STARSHIPS</router-link>
 		      </li>
 		      <li class="nav-item">
-		        <router-link class="nav-link" to="/vehicles">Vehicles</router-link>
+		        <router-link class="nav-link" to="/vehicles">VEHICLES</router-link>
 		      </li>
 		    </ul>
 		  </div>

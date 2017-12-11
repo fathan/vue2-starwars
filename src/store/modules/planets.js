@@ -28,6 +28,21 @@ const getters = {
   }
 }
 
+const mutations = {
+  [mutationType.COUNT_PLANETS] (state, count) {
+    state.count = count
+  },
+  [mutationType.NEXT_PLANETS] (state, next) {
+    state.next = next
+  },
+  [mutationType.PREVIOUS_PLANETS] (state, previous) {
+    state.previous = previous
+  },
+  [mutationType.SHOW_ALL_PLANETS] (state, planets) {
+    state.planets = planets
+  }
+}
+
 const actions = {
 	getAllPlanets ({commit}) {
 		return new Promise((resolve, reject) => {
@@ -51,21 +66,6 @@ const actions = {
       )
 		})
 	}
-}
-
-const mutations = {
-  [mutationType.COUNT_PLANETS] (state, count) {
-    state.count = count
-  },
-  [mutationType.NEXT_PLANETS] (state, next) {
-    state.next = next
-  },
-  [mutationType.PREVIOUS_PLANETS] (state, previous) {
-    state.previous = previous
-  },
-  [mutationType.SHOW_ALL_PLANETS] (state, planets) {
-    state.planets = planets
-  }
 }
 
 export default {

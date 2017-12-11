@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<table class="table table-responsive-xl table-responsive-lg table-responsive-md table-responsive-sm table-striped">
+		<table class="table table-bordered table-responsive-xl table-responsive-lg table-responsive-md table-responsive-sm table-striped">
 		  <thead class="thead-dark">
 		    <tr>
 		      <th scope="col">NO</th>
@@ -8,31 +8,48 @@
 		      <th scope="col">CLASSIFICATION</th>
 		      <th scope="col">DESIGNATION</th>
 		      <th scope="col">AVERAGE HEIGHT</th>
-		      <th scope="col">SKIN COLOR</th>
-		      <th scope="col">HAIR COLOR</th>
-		      <th scope="col">EYE COLOR</th>
 		      <th scope="col">LANGUAGE</th>
 		    </tr>
 		  </thead>
 		  <tbody>
-		    <tr>
-		      <th scope="row">1</th>
-		      <td>-</td>
-		      <td>-</td>
-		      <td>-</td>
-		      <td>-</td>
-		      <td>-</td>
-		      <td>-</td>
-		      <td>-</td>
-		      <td>-</td>
+		    <tr v-for="(s, index) in species" :key="s.name">
+		      <th scope="row">{{ index+1 }}</th>
+		      <td>{{ s.name }}</td>
+		      <td>{{ s.classification }}</td>
+		      <td>{{ s.designation }}</td>
+		      <td>{{ s.average_height }}</td>
+		      <td>{{ s.language }}</td>
 		    </tr>
 		  </tbody>
 		</table>
+		<div class="pull-left">
+			<button type="button" @click="pagination(species)" class="btn btn-primary">Prev</button>
+		</div>
+		<div class="pull-right">
+			<button type="button" @click="pagination(species)" class="btn btn-primary">Next</button>
+		</div>
 	</div>
 </template>
 
 <script>
 	export default {
-		name: 'Species'
+		name: 'Species',
+		computed: {
+			countSpecies () {
+				return this.$store.getters.countSpecies
+			},
+			nextSpecies () {
+				return this.$store.getters.nextSpecies
+			},
+			previousSpecies () {
+				return this.$store.getters.previousSpecies
+			},
+			species () {
+				return this.$store.getters.allSpecies
+			}
+		},
+		created () {
+			this.$store.dispatch('getAllSpecies')
+		}
 	}
 </script>

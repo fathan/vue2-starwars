@@ -12,12 +12,8 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <AppFooter/>
-        </div>
-      </div>
     </div>
+    <AppFooter/>
   </div>
 </template>
 

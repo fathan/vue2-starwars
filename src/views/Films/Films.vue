@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<table class="table table-responsive-xl table-responsive-lg table-responsive-md table-responsive-sm table-striped">
+		<table class="table table-bordered table-responsive-xl table-responsive-lg table-responsive-md table-responsive-sm table-striped">
 		  <thead class="thead-dark">
 		    <tr>
 		      <th scope="col">NO</th>

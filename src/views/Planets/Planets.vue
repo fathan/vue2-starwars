@@ -6,7 +6,7 @@
 		</span>
 		<br>
 		<br>
-		<table class="table table-responsive-xl table-responsive-lg table-responsive-md table-responsive-sm table-striped">
+		<table class="table table-bordered table-responsive-xl table-responsive-lg table-responsive-md table-responsive-sm table-striped">
 		  <thead class="thead-dark">
 		    <tr>
 		      <th scope="col">NO</th>
@@ -30,6 +30,12 @@
 		    </tr>
 		  </tbody>
 		</table>
+		<div class="pull-left">
+			<button type="button" @click="pagination(planets)" class="btn btn-primary">Prev</button>
+		</div>
+		<div class="pull-right">
+			<button type="button" @click="pagination(planets)" class="btn btn-primary">Next</button>
+		</div>
 	</div>
 </template>
 

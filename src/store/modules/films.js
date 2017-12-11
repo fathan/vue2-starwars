@@ -16,6 +16,12 @@ const getters = {
   }
 }
 
+const mutations = {
+  [mutationType.SHOW_ALL_FILMS] (state, films) {
+    state.films = films
+  }
+}
+
 const actions = {
 	getAllFilms ({commit}) {
 		return new Promise((resolve, reject) => {
@@ -36,12 +42,6 @@ const actions = {
       )
 		})
 	}
-}
-
-const mutations = {
-  [mutationType.SHOW_ALL_FILMS] (state, films) {
-    state.films = films
-  }
 }
 
 export default {

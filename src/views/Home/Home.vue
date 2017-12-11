@@ -1,6 +1,6 @@
 <template>
 	<div>
-		Home
+		<img src="/static/banner.png" alt="">
 	</div>
 </template>
 
@@ -9,3 +9,9 @@
 		name: 'Home'
 	}
 </script>
+
+<style scoped>
+	img{
+		width: 100%;
+	}
+</style>
