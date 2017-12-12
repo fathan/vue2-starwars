@@ -32,18 +32,24 @@
 		    </tr>
 		  </tbody>
 		</table>
-		<div class="pull-left">
-			<button type="button" @click="pagination(peoples)" class="btn btn-primary">Prev</button>
+		<!-- <div class="pull-left">
+			<button type="button" @click="pagination(nextPeople)" class="btn btn-primary">Prev</button>
 		</div>
 		<div class="pull-right">
-			<button type="button" @click="pagination(peoples)" class="btn btn-primary">Next</button>
-		</div>
+			<button type="button" @click="pagination(previousPeople)" class="btn btn-primary">Next</button>
+		</div> -->
 	</div>
 </template>
 
 <script>
 	export default {
 		name: 'People',
+		methods: {
+			pagination: function (data) {
+				console.log(data)
+				// getPeopleByUrl
+			}
+		},
 		computed: {
 			countPeople () {
 				return this.$store.getters.countPeople

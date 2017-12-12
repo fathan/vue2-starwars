@@ -65,7 +65,30 @@ const actions = {
         }
       )
 		})
-	}
+	},
+  getPeopleByUrl ({commit}, data) {
+    return new Promise((resolve, reject) => {
+      let options = {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+      console.log(data)
+      axio.get(data, options)
+      .then(
+        response => {
+          let peoples = response.data
+          commit(mutationType.COUNT_PEOPLES, peoples.count)
+          commit(mutationType.NEXT_PEOPLES, peoples.next)
+          commit(mutationType.PREVIOUS_PEOPLES, peoples.previous)
+          commit(mutationType.SHOW_ALL_PEOPLES, peoples.results)
+        },
+        error => {
+          reject(error)
+        }
+      )
+    })
+  }
 }
 
 export default {

@@ -28,12 +28,12 @@
 		    </tr>
 		  </tbody>
 		</table>
-		<div class="pull-left">
+		<!-- <div class="pull-left">
 			<button type="button" @click="pagination(starships)" class="btn btn-primary">Prev</button>
 		</div>
 		<div class="pull-right">
 			<button type="button" @click="pagination(starships)" class="btn btn-primary">Next</button>
-		</div>
+		</div> -->
 	</div>
 </template>
 
