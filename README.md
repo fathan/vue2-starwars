@@ -1,10 +1,9 @@
-# vue2-starwars
+# Vue 2 Starwars
+> Starwars with vue 2 get Data from API The Star Wars https://swapi.co/ with Vue, Vuex, Vue-Router
 
-> A Vue.js version 2 project star wars -> API from https://swapi.co
 
-## Build Setup
-
-``` bash
+## to run you can do:
+```
 # install dependencies
 npm install
 
@@ -13,9 +12,21 @@ npm run dev
 
 # build for production with minification
 npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Demo here
+for demo you can open the following demo link: [Demo Vue2-Starwars](https://fathan.github.io/vue2-starwars/).
+##
+##
+##
+## Contact Me :
+[![Email](https://img.shields.io/badge/Fathan%20Rohman-Email-yellow.svg?maxAge=3600)](mailto:karir.fathan@gmail.com)
+[![Website](https://img.shields.io/badge/Fathan%20Rohman-Github-black.svg?maxAge=3600)](https://github.com/fathan/)
+[![Facebook](https://img.shields.io/badge/fathanrohmanst-Facebook-blue.svg?maxAge=3600)](https://facebook.com/fathanrohmanst)
+
+[![Twitter](https://img.shields.io/badge/Fathan_Rohman-Twitter-55acee.svg?maxAge=3600)](https://twitter.com/Fathan_Rohman)
+[![Linkedin](https://img.shields.io/badge/fathan-Linkedin-0077b5.svg?maxAge=3600)](https://id.linkedin.com/in/fathan)
+
+
+**Hopefully useful, for everything.** :smile: :punch:
+
