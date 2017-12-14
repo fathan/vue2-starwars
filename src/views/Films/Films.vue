@@ -1,5 +1,6 @@
 <template>
 	<div>
+		<h4><strong>FILMS</strong></h4><hr>
 		<table class="table table-bordered table-responsive-xl table-responsive-lg table-responsive-md table-responsive-sm table-striped">
 		  <thead class="thead-dark">
 		    <tr>

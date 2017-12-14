@@ -1,11 +1,19 @@
 <template>
 	<div>
-		Total count people data is a 
-		<span class="badge badge-pill badge-danger">
-			{{ countPeople }}
-		</span>
-		<br>
-		<br>
+		<div class="row">
+		  <div class="col-md-12">
+		    <div class="pull-left">
+		      <h4><strong>PEOPLE</strong></h4>
+		    </div>
+		    <div class="pull-right">
+		      Total count people data is a
+		      <span class="badge badge-pill badge-danger">
+		        {{ countPeople }}
+		      </span>
+		    </div>
+		  </div>
+		</div>
+		<hr>
 		<table class="table table-bordered table-responsive-xl table-responsive-lg table-responsive-md table-responsive-sm table-striped">
 		  <thead class="thead-dark">
 		    <tr>
