@@ -36,18 +36,23 @@
 		    </tr>
 		  </tbody>
 		</table>
-		<!-- <div class="pull-left">
-			<button type="button" @click="pagination(species)" class="btn btn-primary">Prev</button>
+		<div v-if="previousSpecies !== null" class="pull-left">
+			<button type="button" @click="pagination(previousSpecies)" class="btn btn-primary">Prev</button>
 		</div>
 		<div class="pull-right">
-			<button type="button" @click="pagination(species)" class="btn btn-primary">Next</button>
-		</div> -->
+			<button type="button" @click="pagination(nextSpecies)" class="btn btn-primary">Next</button>
+		</div>
 	</div>
 </template>
 
 <script>
 	export default {
 		name: 'Species',
+		methods: {
+			pagination (data) {
+				this.$store.dispatch('getSpeciesByUrl', data)
+			}
+		},
 		computed: {
 			countSpecies () {
 				return this.$store.getters.countSpecies

@@ -36,18 +36,23 @@
 		    </tr>
 		  </tbody>
 		</table>
-		<!-- <div class="pull-left">
-			<button type="button" @click="pagination(starships)" class="btn btn-primary">Prev</button>
+		<div v-if="previousStarship !== null" class="pull-left">
+			<button type="button" @click="pagination(previousStarship)" class="btn btn-primary">Prev</button>
 		</div>
 		<div class="pull-right">
-			<button type="button" @click="pagination(starships)" class="btn btn-primary">Next</button>
-		</div> -->
+			<button type="button" @click="pagination(nextStarship)" class="btn btn-primary">Next</button>
+		</div>
 	</div>
 </template>
 
 <script>
 	export default {
 		name: 'Starships',
+		methods: {
+			pagination (data) {
+				this.$store.dispatch('getStarshipsByUrl', data)
+			}
+		},
 		computed: {
 			countStarship () {
 				return this.$store.getters.countStarship

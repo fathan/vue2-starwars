@@ -14,6 +14,10 @@
 		  </div>
 		</div>
 		<hr>
+		<!-- <div v-for="(p, index) in peoples" class="col-md-3">
+			{{ p.name }}
+			<img :src="`https://starwars-visualguide.com/assets/img/characters/${index+1}.jpg`" alt="">
+		</div> -->
 		<table class="table table-bordered table-responsive-xl table-responsive-lg table-responsive-md table-responsive-sm table-striped">
 		  <thead class="thead-dark">
 		    <tr>
@@ -40,12 +44,12 @@
 		    </tr>
 		  </tbody>
 		</table>
-		<!-- <div class="pull-left">
-			<button type="button" @click="pagination(nextPeople)" class="btn btn-primary">Prev</button>
+		<div v-if="previousPeople !== null" class="pull-left">
+			<button type="button" @click="pagination(previousPeople)" class="btn btn-primary">Prev</button>
 		</div>
 		<div class="pull-right">
-			<button type="button" @click="pagination(previousPeople)" class="btn btn-primary">Next</button>
-		</div> -->
+			<button type="button" @click="pagination(nextPeople)" class="btn btn-primary">Next</button>
+		</div>
 	</div>
 </template>
 
@@ -54,8 +58,7 @@
 		name: 'People',
 		methods: {
 			pagination: function (data) {
-				console.log(data)
-				// getPeopleByUrl
+				this.$store.dispatch('getPeopleByUrl', data)
 			}
 		},
 		computed: {

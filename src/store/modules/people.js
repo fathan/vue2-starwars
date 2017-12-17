@@ -73,8 +73,7 @@ const actions = {
           'Content-Type': 'application/json'
         }
       }
-      console.log(data)
-      axio.get(data, options)
+      axios.get(data, options)
       .then(
         response => {
           let peoples = response.data

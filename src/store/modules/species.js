@@ -65,7 +65,29 @@ const actions = {
         }
       )
 		})
-	}
+	},
+  getSpeciesByUrl ({commit}, data) {
+    return new Promise((resolve, reject) => {
+      let options = {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+      axios.get(data, options)
+      .then(
+        response => {
+          let species = response.data
+          commit(mutationType.COUNT_SPECIES, species.count)
+          commit(mutationType.NEXT_SPECIES, species.next)
+          commit(mutationType.PREVIOUS_SPECIES, species.previous)
+          commit(mutationType.SHOW_ALL_SPECIES, species.results)
+        },
+        error => {
+          reject(error)
+        }
+      )
+    })
+  }
 }
 
 export default {

@@ -65,7 +65,29 @@ const actions = {
         }
       )
 		})
-	}
+	},
+  getStarshipsByUrl ({commit}, data) {
+    return new Promise((resolve, reject) => {
+      let options = {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+      axios.get(data, options)
+      .then(
+        response => {
+          let starship = response.data
+          commit(mutationType.COUNT_STARSHIP, starship.count)
+          commit(mutationType.NEXT_STARSHIP, starship.next)
+          commit(mutationType.PREVIOUS_STARSHIP, starship.previous)
+          commit(mutationType.SHOW_ALL_STARSHIPS, starship.results)
+        },
+        error => {
+          reject(error)
+        }
+      )
+    })
+  }
 }
 
 export default {

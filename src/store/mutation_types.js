@@ -1,6 +1,7 @@
 export const SHOW_ALL_FILMS = 'SHOW_ALL_FILMS'
 export const SHOW_FILM_BY_ID = 'SHOW_FILM_BY_ID'
 export const SHOW_FILM_BY_SEARCH = 'SHOW_FILM_BY_SEARCH'
+export const SHOW_FILM_DETAIL = 'SHOW_FILM_DETAIL'
 
 export const COUNT_PEOPLES = 'COUNT_PEOPLES'
 export const NEXT_PEOPLES = 'NEXT_PEOPLES'

@@ -65,7 +65,29 @@ const actions = {
         }
       )
 		})
-	}
+	},
+  getVehiclesByUrl ({commit}, data) {
+    return new Promise((resolve, reject) => {
+      let options = {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+      axios.get(data, options)
+      .then(
+        response => {
+          let vehicle = response.data
+          commit(mutationType.COUNT_VEHICLE, vehicle.count)
+          commit(mutationType.NEXT_VEHICLE, vehicle.next)
+          commit(mutationType.PREVIOUS_VEHICLE, vehicle.previous)
+          commit(mutationType.SHOW_ALL_VEHICLES, vehicle.results)
+        },
+        error => {
+          reject(error)
+        }
+      )
+    })
+  }
 }
 
 export default {

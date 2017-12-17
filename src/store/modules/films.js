@@ -7,22 +7,34 @@ const api = axios.create({
 })
 
 const state = {
-	films: []
+	films: [],
+  filmDetail: {}
 }
 
 const getters = {
 	allFilms: state => {
     return state.films
+  },
+  filmDetail: state => {
+    return state.filmDetail
   }
 }
 
 const mutations = {
   [mutationType.SHOW_ALL_FILMS] (state, films) {
     state.films = films
+  },
+  [mutationType.SHOW_FILM_DETAIL] (state, filmDetail) {
+    state.filmDetail = filmDetail
   }
 }
 
 const actions = {
+  // ACTIONS GLOBAL
+  showFilmDetail ({commit}, data) {
+    commit(mutationType.SHOW_FILM_DETAIL, data)
+  },
+  // ACTIONS API DATA
 	getAllFilms ({commit}) {
 		return new Promise((resolve, reject) => {
 			let options = {

@@ -65,7 +65,32 @@ const actions = {
         }
       )
 		})
-	}
+	},
+  getPlanetsByUrl ({commit}, data) {
+    return new Promise((resolve, reject) => {
+      let options = {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+      axios.get(data, options)
+      .then(
+        response => {
+          let planets = response.data
+          commit(mutationType.COUNT_PLANETS, planets.count)
+          commit(mutationType.NEXT_PLANETS, planets.next)
+          commit(mutationType.PREVIOUS_PLANETS, planets.previous)
+          commit(mutationType.SHOW_ALL_PLANETS, planets.results)
+        }
+      )
+      .catch(
+        error => {
+          reject(error)
+          console.log(error)
+        }
+      )
+    })
+  }
 }
 
 export default {

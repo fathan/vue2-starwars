@@ -9,6 +9,7 @@
 		      <th scope="col">DIRECTOR</th>
 		      <th scope="col">PRODUCER</th>
 		      <th scope="col">RELEASE DATE</th>
+		      <th scope="col">ACTION</th>
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -18,9 +19,13 @@
 		      <td>{{ f.director }}</td>
 		      <td>{{ f.producer }}</td>
 		      <td>{{ f.release_date }}</td>
+		      <td><b-button :pressed="false" variant="success" v-b-modal.modal-films @click="showModalFilm(f)">Detail</b-button></td>
 		    </tr>
 		  </tbody>
 		</table>
+		<b-modal id="modal-films" title="Bootstrap-Vue">
+	    <pre>{{ filmDetail }}</pre>
+	  </b-modal>
 	</div>
 </template>
 
@@ -30,6 +35,14 @@
 		computed: {
 			films () {
 				return this.$store.getters.allFilms
+			},
+			filmDetail () {
+				return this.$store.getters.filmDetail
+			}
+		},
+		methods: {
+			showModalFilm (data) {
+				this.$store.dispatch('showFilmDetail', data)
 			}
 		},
 		created () {

@@ -38,18 +38,23 @@
 		    </tr>
 		  </tbody>
 		</table>
-		<!-- <div class="pull-left">
-			<button type="button" @click="pagination(planets)" class="btn btn-primary">Prev</button>
+		<div v-if="previousPlanet !== null" class="pull-left">
+			<button type="button" @click="pagination(previousPlanet)" class="btn btn-primary">Prev</button>
 		</div>
 		<div class="pull-right">
-			<button type="button" @click="pagination(planets)" class="btn btn-primary">Next</button>
-		</div> -->
+			<button type="button" @click="pagination(nextPlanet)" class="btn btn-primary">Next</button>
+		</div>
 	</div>
 </template>
 
 <script>
 	export default {
 		name: 'Planets',
+		methods: {
+			pagination: function (data) {
+				this.$store.dispatch('getPlanetsByUrl', data)
+			}
+		},
 		computed: {
 			countPlanet () {
 				return this.$store.getters.countPlanet

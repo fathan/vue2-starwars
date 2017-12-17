@@ -36,34 +36,39 @@
 		    </tr>
 		  </tbody>
 		</table>
-		<!-- <div class="pull-left">
-			<button type="button" @click="pagination(vehicles)" class="btn btn-primary">Prev</button>
+		<div v-if="previousVehicle !== null" class="pull-left">
+			<button type="button" @click="pagination(previousVehicle)" class="btn btn-primary">Prev</button>
 		</div>
 		<div class="pull-right">
-			<button type="button" @click="pagination(vehicles)" class="btn btn-primary">Next</button>
-		</div> -->
+			<button type="button" @click="pagination(nextVehicle)" class="btn btn-primary">Next</button>
+		</div>
 	</div>
 </template>
 
 <script>
-	export default {
-		name: 'Vehicles',
-		computed: {
-			countVehicle () {
-				return this.$store.getters.countVehicle
-			},
-			nextVehicle () {
-				return this.$store.getters.nextVehicle
-			},
-			previousVehicle () {
-				return this.$store.getters.previousVehicle
-			},
-			vehicles () {
-				return this.$store.getters.allVehicles
-			}
-		},
-		created () {
-			this.$store.dispatch('getAllVehicles')
+export default {
+	name: 'Vehicles',
+	methods: {
+		pagination (data) {
+			this.$store.dispatch('getVehiclesByUrl', data)
 		}
+	},
+	computed: {
+		countVehicle () {
+			return this.$store.getters.countVehicle
+		},
+		nextVehicle () {
+			return this.$store.getters.nextVehicle
+		},
+		previousVehicle () {
+			return this.$store.getters.previousVehicle
+		},
+		vehicles () {
+			return this.$store.getters.allVehicles
+		}
+	},
+	created () {
+		this.$store.dispatch('getAllVehicles')
 	}
+}
 </script>
