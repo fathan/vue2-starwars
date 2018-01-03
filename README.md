@@ -30,3 +30,4 @@ for demo you can open the following demo link: [Demo Vue2-Starwars](https://fath
 
 **Hopefully useful, for everything.** :smile: :punch:
 
+Developed By Fathan Rohman
