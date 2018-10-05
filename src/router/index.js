@@ -25,6 +25,8 @@ import IndexVehicles from '@/views/Vehicles/Index'
 import Vehicles from '@/views/Vehicles/Vehicles'
 import VehicleDetail from '@/views/Vehicles/VehicleDetail'
 
+import SampleFontAwesome from '@/views/Font/SampleFontAwesome'
+
 import Home from '@/views/Home/Home'
 import NotFound from '@/views/Random/NotFound'
 
@@ -43,6 +45,11 @@ const router = new Router({
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/font-awesome',
+      name: 'Font Awesome',
+      component: SampleFontAwesome
     },
     {
       path: '/films',

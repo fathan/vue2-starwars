@@ -8,6 +8,9 @@ import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
+// FONT AWESOME
+import FontAwesome from './FontAwesome'
+
 // BOOTSTRAP IMPORT
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
